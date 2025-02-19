@@ -1,12 +1,10 @@
 from flask import Flask
 
 from config import Config
-from .auth import auth_blueprint
 from .extensions import db, login_manager, bcrypt, cache
-from .home.routes import home_blueprint
 from .init_db_data import init_db
 from .models import User
-from .quiz import quiz_blueprint
+from .routes import auth_blueprint, home_blueprint, quiz_blueprint
 
 
 def create_app(config_class=Config):

@@ -1,14 +1,12 @@
-from functools import reduce
 from random import shuffle
 
-from blib2to3.pgen2.parse import Results
 from flask import Blueprint, render_template, redirect, url_for, session
 from flask_login import login_required, current_user
 from sqlalchemy import func
 
 from .forms import QuizForm
-from ..extensions import db
-from ..models import Quiz, Question, Answer, UserResponse, Result, User
+from ...extensions import db
+from ...models import Quiz, Question, Answer, UserResponse, Result, User
 
 quiz_blueprint = Blueprint("quiz", __name__, url_prefix="/quiz")
 

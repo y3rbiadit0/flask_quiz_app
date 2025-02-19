@@ -1,8 +1,8 @@
 import flask_login
 from flask import Blueprint, render_template, request, redirect, url_for
 
-from ..extensions import db, bcrypt
-from ..models import User
+from ...extensions import db, bcrypt
+from ...models import User
 
 auth_blueprint = Blueprint("auth", __name__, url_prefix="/auth")
 

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-from ..services import get_cached_weather
+from ...services import get_cached_weather
 
 home_blueprint = Blueprint("home", __name__)
 
