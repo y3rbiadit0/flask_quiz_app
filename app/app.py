@@ -4,7 +4,8 @@ from config import Config
 from .auth import auth_blueprint
 from .extensions import db, login_manager, bcrypt, cache
 from .home.routes import home_blueprint
-from .models import Users
+from .init_db_data import init_db
+from .models import User
 
 
 def create_app(config_class=Config):
@@ -17,12 +18,13 @@ def create_app(config_class=Config):
     db.init_app(app)
     with app.app_context():
         db.create_all()
+        init_db(db)
 
     login_manager.init_app(app)
 
     @login_manager.user_loader
     def loader_user(user_id):
-        return Users.query.get(user_id)
+        return User.query.get(user_id)
 
     bcrypt.init_app(app)
 
