@@ -1,18 +1,18 @@
 # Quiz Application
 
-A Flask-based Quiz Application using `Flask Blueprints`, `Flask-SQLAlchemy`, and `Flask-WTF`.
+A Flask-based Quiz Application using `Flask Blueprints`, `Flask-SQLAlchemy`, `Flask-Login`, and `Flask-WTF`.
 This application allows users to take quizzes, tracks their scores, and displays a leaderboard.
 
 **By default it uses local SQLite database.
 
 ## Features
-- User authentication
+- [Flask-Login](https://flask-login.readthedocs.io/en/latest/) - User authentication 
 - Dynamic quiz generation with multiple topics
 - Randomized questions and answer choices
 - Leaderboard displaying user scores
-- Flask Blueprints for modular structure
-- Flask-SQLAlchemy for database management
-- Flask-WTF for handling forms
+- [Flask Blueprints](https://flask.palletsprojects.com/en/stable/blueprints/) for modular structure
+- [Flask-SQLAlchemy](https://flask-sqlalchemy.readthedocs.io/en/stable/quickstart/) for database management
+- [Flask-WTF](https://flask.palletsprojects.com/en/stable/patterns/wtforms/) for handling forms
 
 ## Project Structure
 ```plaintext
@@ -58,7 +58,4 @@ pip install -r requirements.txt
 ```bash
 flask run
 ```
-
-## License
-This project is open-source under the MIT License.
 
