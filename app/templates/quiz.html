@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    <p>Your total score: {{ total_score }}</p>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>{{ question.question }}</legend>
+            {% for choice in form.answer %}
+                <div>
+                    <label for="{{ choice.id }}">
+                        {{ choice.label.text }}
+                    </label>
+                    <input type="radio" id="{{ choice.id }}" name="answer" value="{{ choice.data }}">
+                </div>
+            {% endfor %}
+        </fieldset>
+        {{ form.submit() }}
+    </form>
+
+    <a href="{{ url_for('quiz.leaderboard') }}">View Leaderboard</a>
+</body>
+</html>

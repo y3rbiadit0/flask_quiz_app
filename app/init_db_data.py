@@ -3,7 +3,16 @@ from typing import Dict
 import flask_sqlalchemy
 
 from .extensions import bcrypt
-from .models import Quiz, Question, QuestionType, QuestionTopic, User, Answer
+from .models import (
+    Quiz,
+    Question,
+    QuestionType,
+    QuestionTopic,
+    User,
+    Answer,
+    Result,
+    UserResponse,
+)
 
 """This script is only to pre-initialize DB with some data"""
 
@@ -16,11 +25,12 @@ def init_db(db: flask_sqlalchemy.SQLAlchemy):
 
 
 def _clean_database(db: flask_sqlalchemy.SQLAlchemy):
-    # Clean database first
     db.session.query(Answer).delete()
     db.session.query(Question).delete()
     db.session.query(Quiz).delete()
     db.session.query(User).delete()
+    db.session.query(Result).delete()
+    db.session.query(UserResponse).delete()
     db.session.commit()
 
 

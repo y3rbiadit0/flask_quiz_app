@@ -1,3 +1,4 @@
+import abc
 from datetime import datetime
 from enum import Enum
 
@@ -25,6 +26,18 @@ class Question(db.Model):
     question_type = db.Column(db.String(50), nullable=False)
     answers = db.relationship("Answer", backref="question", lazy=True)
     topic = db.Column(db.Enum(QuestionTopic), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "quiz_id": self.quiz_id,
+            "question": self.question,
+            "question_type": self.question_type,
+            "topic": self.topic.name,  # Convert Enum to string
+            "answers": [
+                answer.to_dict() for answer in self.answers
+            ],  # Assuming Answer has a to_dict method
+        }
 
 
 class Answer(db.Model):

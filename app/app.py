@@ -6,6 +6,7 @@ from .extensions import db, login_manager, bcrypt, cache
 from .home.routes import home_blueprint
 from .init_db_data import init_db
 from .models import User
+from .quiz import quiz_blueprint
 
 
 def create_app(config_class=Config):
@@ -31,6 +32,7 @@ def create_app(config_class=Config):
     # Register blueprints here
     app.register_blueprint(home_blueprint)
     app.register_blueprint(auth_blueprint)
+    app.register_blueprint(quiz_blueprint)
 
     @app.route("/test/")
     def test_page():
