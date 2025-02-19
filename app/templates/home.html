@@ -64,14 +64,9 @@
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="/auth/login">Login</a></li>
-            <li><a href="/auth/register">Create Account</a></li>
-        </ul>
-    </nav>
-
+    {% include 'nav_bar.html' %}
     <div class="container">
+        {% include 'weather_widget.html' %}
         {% if current_user.is_authenticated %}
             <h1>You are logged in</h1>
             <a href="/auth/logout" class="logout-btn">Logout</a>
