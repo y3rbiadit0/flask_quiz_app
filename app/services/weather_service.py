@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Dict, List
 
 import requests
@@ -14,12 +15,15 @@ def _get_weather(city: str = "Fisciano") -> List[Dict]:
     response = requests.get(url)
     data = response.json()
     weather = []
-    for forecast_day in data["list"]:  # Three days
-        day_temp = forecast_day["main"]["temp_max"]
-        night_temp = forecast_day["main"]["temp_min"]
+    for forecast_day in data["list"]:
+        date_obj = datetime.strptime(forecast_day["dt_txt"], "%Y-%m-%d %H:%M:%S")
+        date_str = date_obj.strftime("%A %d %B - %H:%M")
+
+        day_temp = int(forecast_day["main"]["temp_max"])
+        night_temp = int(forecast_day["main"]["temp_min"])
         weather.append(
             {
-                "date": forecast_day["dt_txt"],
+                "date": date_str,
                 "day_temp": day_temp,
                 "night_temp": night_temp,
             }
@@ -27,7 +31,6 @@ def _get_weather(city: str = "Fisciano") -> List[Dict]:
     return weather
 
 
-# Cache the weather data for 10 minutes (300 seconds)
 @cache.cached(timeout=300, key_prefix="weather_data")
 def get_cached_weather(city: str = "Fisciano") -> List[Dict]:
     return _get_weather(city)
