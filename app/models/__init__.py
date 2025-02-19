@@ -1,4 +1,4 @@
-from .questions import (
+from .quiz import (
     QuestionTopic,
     Question,
     QuestionType,
