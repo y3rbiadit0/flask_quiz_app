@@ -38,6 +38,7 @@ def quiz():
     current_question_id = session["questions"][quiz_question_index]
     current_question = Question.query.get(current_question_id)
     answers = [(answer.id, answer.text) for answer in current_question.answers]
+    shuffle(answers)
     form.answer.choices = answers
 
     if form.validate_on_submit():
