@@ -11,13 +11,7 @@
 
     {% include 'nav_bar.html' %}
     <div class="container">
-        {% include 'weather_widget.html' %}
-        {% if current_user.is_authenticated %}
-            <h1>You are logged in</h1>
-            <a href="/auth/logout" class="logout-btn">Logout</a>
-        {% else %}
-            <h1>You are not logged in</h1>
-        {% endif %}
+    {% include 'weather_widget.html' %}
     </div>
     {% include 'footer.html' %}
 </body>

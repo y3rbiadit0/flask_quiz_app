@@ -1,21 +1,22 @@
 <div class="container">
-    <h1>Previsioni Meteo</h1>
+    <h1>Weather Forecast</h1>
 
     <form action="{{ url_for('home.home') }}" method="POST" class="mb-4">
         <div class="form-group">
-            <label for="city" class="form-label">Inserisci il nome della città:</label>
-            <input type="text" id="city" name="city" class="form-control" placeholder="E.g., Roma" required>
+            <label for="city" class="form-label">Enter the city name:</label>
+            <input type="text" id="city" name="city" class="form-control" placeholder="E.g., Rome" required>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Cerca</button>
+        <button type="submit" class="btn btn-submit mt-3">Search</button>
     </form>
+
     {% if weather_data %}
-        <h2 class="my-4">Previsioni per i prossimi 3 giorni</h2>
+        <h2 class="my-4">Forecast for Today - During the day</h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
             <thead>
                 <tr style="background-color: #333; color: white;">
-                    <th style="padding: 10px;">Data</th>
-                    <th style="padding: 10px;">Temp. diurna (°C)</th>
-                    <th style="padding: 10px;">Temp. notturna (°C)</th>
+                    <th style="padding: 10px;">Date</th>
+                    <th style="padding: 10px;">Daytime Temp. (°C)</th>
+                    <th style="padding: 10px;">Nighttime Temp. (°C)</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,3 +31,36 @@
         </table>
     {% endif %}
 </div>
+
+<style>
+    .btn-submit {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 24px;  /* Padding inside the button */
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 200px;  /* Fixed width */
+        height: 50px;  /* Fixed height */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: inline-block;
+        text-align: center;
+        margin-top: 20px; /* Padding (space) around the button */
+    }
+
+    .btn-submit:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    .btn-submit:active {
+        background-color: #388e3c;
+        transform: translateY(0);
+    }
+
+    .btn-submit:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+    }
+</style>

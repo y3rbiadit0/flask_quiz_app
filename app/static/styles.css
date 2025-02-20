@@ -1,5 +1,5 @@
 footer {
-    background-color: #333; /* Same as nav bar */
+    background-color: #333;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -49,16 +49,28 @@ h1 {
 }
 
 .logout-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
+        padding: 10px 20px;
+        background-color: red;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
 
-.logout-btn:hover {
-    background-color: darkred;
-}
+    .logout-btn:hover {
+        background-color: darkred;
+    }
+
+    .login-btn {
+        padding: 10px 20px;
+        background-color: #4CAF50; /* Green color for the login button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .login-btn:hover {
+        background-color: #45a049; /* Slightly darker green on hover */
+    }
+

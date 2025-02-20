@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='leaderboard.css') }}">
+
 </head>
 <body>
     <h1>Leaderboard</h1>
@@ -23,6 +27,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ url_for('home.home') }}">Back to Home Page <-</a>
+    <a href="{{ url_for('home.home') }}" class="back-button">Back to Home Page <-</a>
+    {% include 'footer.html' %}
 </body>
 </html>
