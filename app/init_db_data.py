@@ -52,19 +52,19 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.ai,
                     "answers": [
-                        ("Exclusive use of structured data", False),
-                        ("Execution of simple arithmetic calculations", False),
                         ("Ability to learn and adapt", True),
-                        ("Operation without requiring prior data", False),
+                        ("Exclusive use of structured data", False),
+                        ("Can only perform basic math calculations", False),
+                        ("Requires no prior data", False),
                     ],
                 },
                 {
-                    "question": "Which technique is used in deep learning?",
+                    "question": "Which technique is commonly used in deep learning?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.ai,
                     "answers": [
-                        ("Genetic algorithms", False),
                         ("Artificial neural networks", True),
+                        ("Genetic algorithms", False),
                         ("Linear programming", False),
                         ("Decision trees", False),
                     ],
@@ -74,8 +74,8 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.ai,
                     "answers": [
-                        ("To create models that predict future values", False),
                         ("To train models to maximize a reward signal", True),
+                        ("To create models that predict future values", False),
                         ("To analyze unstructured data", False),
                         ("To classify labeled data", False),
                     ],
@@ -85,21 +85,21 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.ai,
                     "answers": [
-                        ("Clustering data into groups", False),
                         ("Training a model on labeled data", True),
+                        ("Clustering data into groups", False),
                         ("Analyzing time-series data", False),
                         ("Generating new data from existing data", False),
                     ],
                 },
                 {
-                    "question": "Which AI technique is widely used for classification tasks?",
+                    "question": "Which AI technique is used in many apps for face recognition?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.ai,
                     "answers": [
+                        ("Support vector machines", False),
                         ("Linear regression", False),
-                        ("Support vector machines", True),
                         ("K-means clustering", False),
-                        ("Principal component analysis", False),
+                        ("Convolutional neural networks (CNN)", True),
                     ],
                 },
             ],
@@ -108,58 +108,58 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
             "quiz": quizzes["computer_vision"],
             "questions": [
                 {
-                    "question": "Which technique is used to detect edges in an image?",
+                    "question": "Which technique is used to find edges in an image?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.computer_vision,
                     "answers": [
-                        ("Fourier transform", False),
                         ("Canny edge detection", True),
+                        ("Fourier transform", False),
                         ("Image segmentation", False),
                         ("Histographic equalization", False),
                     ],
                 },
                 {
-                    "question": "Which algorithm is used for face recognition in computer vision?",
+                    "question": "Which algorithm is used to recognize faces in photos?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.computer_vision,
                     "answers": [
+                        ("Haar cascades", True),
                         ("K-means clustering", False),
                         ("YOLO", False),
-                        ("Haar cascades", True),
                         ("Deep Q-learning", False),
                     ],
                 },
                 {
-                    "question": "Which of the following is NOT typically used for object detection?",
+                    "question": "Which of these is NOT commonly used for detecting objects in pictures?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.computer_vision,
                     "answers": [
+                        ("SIFT", True),
                         ("YOLO", False),
                         ("Faster R-CNN", False),
-                        ("SIFT", True),
                         ("SSD", False),
                     ],
                 },
                 {
-                    "question": "Which type of neural network is commonly used for image recognition?",
+                    "question": "Which type of neural network is used for image recognition?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.computer_vision,
                     "answers": [
                         ("Convolutional neural network (CNN)", True),
                         ("Recurrent neural network (RNN)", False),
-                        ("Multilayer perceptron (MLP)", False),
                         ("Generative adversarial network (GAN)", False),
+                        ("Multilayer perceptron (MLP)", False),
                     ],
                 },
                 {
-                    "question": "What is the purpose of image segmentation in computer vision?",
+                    "question": "What is the purpose of splitting an image into smaller parts in computer vision?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.computer_vision,
                     "answers": [
-                        ("To reduce image resolution", False),
-                        ("To classify objects", False),
                         ("To split an image into meaningful regions", True),
                         ("To filter out noise", False),
+                        ("To classify objects", False),
+                        ("To reduce image resolution", False),
                     ],
                 },
             ],
@@ -168,7 +168,7 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
             "quiz": quizzes["nlp"],
             "questions": [
                 {
-                    "question": "Which technique is used to convert words into numerical representations in NLP?",
+                    "question": "Which technique is used to convert words into numbers in NLP?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.nlp,
                     "answers": [
@@ -179,29 +179,29 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
                     ],
                 },
                 {
-                    "question": "Which of the following is used for sentiment analysis in NLP?",
+                    "question": "Which of these is used for understanding emotions in text (sentiment analysis)?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.nlp,
                     "answers": [
-                        ("Word2Vec", False),
                         ("SVM (Support Vector Machine)", True),
+                        ("Word2Vec", False),
                         ("BERT", False),
                         ("Hidden Markov Models", False),
                     ],
                 },
                 {
-                    "question": "Which algorithm is commonly used in text classification tasks?",
+                    "question": "Which algorithm is used for categorizing text into topics?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.nlp,
                     "answers": [
-                        ("K-means", False),
                         ("Naïve Bayes", True),
+                        ("K-means", False),
                         ("Reinforcement learning", False),
                         ("Q-learning", False),
                     ],
                 },
                 {
-                    "question": "Which of these is an example of a language model?",
+                    "question": "Which of these is a language model that can generate text?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.nlp,
                     "answers": [
@@ -212,12 +212,12 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
                     ],
                 },
                 {
-                    "question": "Which of the following is used for machine translation?",
+                    "question": "Which of the following is used for translating text between languages?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.nlp,
                     "answers": [
-                        ("Deep Q-learning", False),
                         ("Seq2Seq models", True),
+                        ("Deep Q-learning", False),
                         ("K-means clustering", False),
                         ("Gaussian Naive Bayes", False),
                     ],
@@ -228,35 +228,35 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
             "quiz": quizzes["python_ai"],
             "questions": [
                 {
-                    "question": "Which Python library is commonly used for AI and machine learning?",
+                    "question": "Which Python library is widely used for AI and machine learning?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.python_ai,
                     "answers": [
-                        ("Matplotlib", False),
                         ("TensorFlow", True),
+                        ("Matplotlib", False),
                         ("Flask", False),
                         ("BeautifulSoup", False),
                     ],
                 },
                 {
-                    "question": "Which Python library is popular for data manipulation?",
+                    "question": "Which Python library helps with organizing and analyzing data?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.python_ai,
                     "answers": [
-                        ("Django", False),
                         ("Pandas", True),
+                        ("Django", False),
                         ("TensorFlow", False),
                         ("Scikit-learn", False),
                     ],
                 },
                 {
-                    "question": "Which Python library is used for data visualization?",
+                    "question": "Which Python library is used for drawing charts and graphs?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.python_ai,
                     "answers": [
-                        ("Numpy", False),
-                        ("Flask", False),
                         ("Matplotlib", True),
+                        ("Flask", False),
+                        ("Numpy", False),
                         ("Scipy", False),
                     ],
                 },
@@ -265,19 +265,19 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.python_ai,
                     "answers": [
-                        ("Web development", False),
-                        ("Data analysis", False),
                         ("Deep learning", True),
+                        ("Data analysis", False),
+                        ("Web development", False),
                         ("GUI development", False),
                     ],
                 },
                 {
-                    "question": "Which library is used for natural language processing in Python?",
+                    "question": "Which library is used for working with text in Python?",
                     "question_type": QuestionType.multiple_choice,
                     "topic": QuestionTopic.python_ai,
                     "answers": [
-                        ("TensorFlow", False),
                         ("NLTK", True),
+                        ("TensorFlow", False),
                         ("Keras", False),
                         ("OpenCV", False),
                     ],
@@ -306,10 +306,10 @@ def _create_questions(db: flask_sqlalchemy.SQLAlchemy, quizzes: Dict[str, Quiz])
 
 def _create_quizzes(db: flask_sqlalchemy.SQLAlchemy) -> Dict[str, Quiz]:
     quizzes = {
-        "ai": Quiz(title="Artificial Intelligence"),
-        "computer_vision": Quiz(title="Computer Vision"),
-        "nlp": Quiz(title="Natural Language Processing"),
-        "python_ai": Quiz(title="Applications of AI Models with Python Applications"),
+        "ai": Quiz(title="Artificial Intelligence for Beginners"),
+        "computer_vision": Quiz(title="Introduction to Computer Vision"),
+        "nlp": Quiz(title="Basics of Natural Language Processing"),
+        "python_ai": Quiz(title="Python for AI and Machine Learning"),
     }
     db.session.add_all(quizzes.values())
     db.session.commit()
