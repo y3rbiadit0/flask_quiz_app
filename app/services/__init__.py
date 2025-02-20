@@ -1,1 +1,1 @@
-from .weather_service import get_cached_weather
+from .weather_service import get_weather

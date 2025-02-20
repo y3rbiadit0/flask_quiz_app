@@ -1,5 +1,13 @@
 <div class="container">
     <h1>Previsioni Meteo</h1>
+
+    <form action="{{ url_for('home.home') }}" method="POST" class="mb-4">
+        <div class="form-group">
+            <label for="city" class="form-label">Inserisci il nome della città:</label>
+            <input type="text" id="city" name="city" class="form-control" placeholder="E.g., Roma" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Cerca</button>
+    </form>
     {% if weather_data %}
         <h2 class="my-4">Previsioni per i prossimi 3 giorni</h2>
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
