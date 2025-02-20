@@ -1,10 +1,11 @@
 # Quiz Application
-
+ 
 A Flask-based Quiz Application using `Flask Blueprints`, `Flask-SQLAlchemy`, `Flask-Login`, and `Flask-WTF`.
 This application allows users to take quizzes, tracks their scores, and displays a leaderboard.
 
-**By default it uses local SQLite database.
+*_By default it uses local SQLite database._
 
+-> *Hosted in [PythonAnywhere](https://www.pythonanywhere.com/)*: [Simple Quiz Application](https://merendafrancon.eu.pythonanywhere.com/) 
 ## Features
 - [Flask-Login](https://flask-login.readthedocs.io/en/latest/) - User authentication 
 - Dynamic quiz generation with multiple topics
