@@ -64,3 +64,4 @@ flask run
 1. UI/UX - To make it more fun
 2. Move the logic from controllers to the `service` to handle it properly
 3. For `services` - at the time of consuming an API, add a Client and split responsabilities.
+4. Add `tests`
