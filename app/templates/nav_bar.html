@@ -2,12 +2,16 @@
     <ul>
         {% if current_user.is_authenticated %}
             <a href="/auth/logout" class="logout-btn">Logout</a>
+            <li><a href="/quiz/start/1">Quiz - AI</a></li>
+            <li><a href="/quiz/start/2">Quiz - Computer Vision</a></li>
+            <li><a href="/quiz/start/3">Quiz - NLP</a></li>
+            <li><a href="/quiz/start/4">Quiz - Python AI</a></li>
+            <li><a href="/quiz/leaderboard">Leaderboard</a></li>
         {% else %}
             <li><a href="/auth/login" class="login-btn">Login</a></li>
             <li><a href="/auth/register">Create Account</a></li>
         {% endif %}
 
-        <li><a href="/quiz/start/1">Quiz</a></li>
-        <li><a href="/quiz/leaderboard">Leaderboard</a></li>
+
     </ul>
 </nav>

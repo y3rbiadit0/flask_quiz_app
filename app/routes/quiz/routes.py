@@ -1,6 +1,6 @@
 from random import shuffle
 
-from flask import Blueprint, render_template, redirect, url_for, session
+from flask import Blueprint, render_template, redirect, url_for, session, flash
 from flask_login import login_required, current_user
 from sqlalchemy import func
 
@@ -29,10 +29,16 @@ def start_quiz(id: int):
 @quiz_blueprint.route("/play", methods=["GET", "POST"])
 @login_required
 def quiz():
+
+    existing_result = Result.query.filter_by(user_id=current_user.id,
+                                             quiz_id=session["quiz_id"]).first()
+
+    if existing_result:
+        flash("You have already completed this quiz.", "info")
+        return redirect(url_for("home.home"))
+
     quiz = Quiz.query.filter_by(id=session["quiz_id"]).first()
     form = QuizForm()
-
-    # Fetch the question from DB using the stored ID
 
     quiz_question_index = session["current_question"]
     current_question_id = session["questions"][quiz_question_index]
