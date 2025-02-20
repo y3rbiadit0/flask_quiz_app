@@ -1,6 +1,6 @@
 from flask import Flask
 
-from config import Config
+from .config import Config
 from .extensions import db, login_manager, bcrypt, cache
 from .init_db_data import init_db
 from .models import User
